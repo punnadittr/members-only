@@ -1,0 +1,17 @@
+<% provide(:title, "Index") %>
+<h1>All Posts</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="post-wrapper">
+    <% @posts.each do |post| %>
+      <% if logged_in? %>
+        <p class="by-author">Author: <%= post.author %></p>
+      <% else %>
+        <p class="by-author">Author: Hidden</p>
+        <% end %>
+      <p class="content"><%= post.content %></p>
+    <% end %>
+    </div>
+  </div>
+</div>
